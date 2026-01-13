@@ -4,7 +4,10 @@ import UseGenre from "../Hooks/UseGenre";
 import CroppedImageUrl from "./services/ImageUrl";
 
 
-const Genre = ()=>{
+interface Props {
+    onSelectGenre:(genre: Genre) => void;
+}
+const Genre = ( {onSelectGenre}:Props )=>{
 
     const {genres, isLoading} = UseGenre();
 
@@ -12,12 +15,14 @@ const Genre = ()=>{
  return <Spinner/>
     return(
 
-     <List>
+     <List >
         {genres?.map(genre => 
         <ListItem key={genre.id}> 
         <HStack >
             <Image boxSize={'35px'} borderRadius={8} src={CroppedImageUrl(genre.image_background)} justifyContent={'space-evenly'} marginTop={3}  />
-            <Button onClick={()=>console.log(genre)}fontSize={'ms'} variant={'link'}>{genre.name}</Button >
+
+             
+            <Button onClick={()=>onSelectGenre(genre)}fontSize={'ms'} variant={'link'}>{genre.name}</Button >
         </HStack>
         </ListItem>)}
      </List>
