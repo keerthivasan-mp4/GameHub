@@ -1,9 +1,9 @@
 
 import useData from "./useData";
 
-interface Props{
-    platforms:Platform[]
-}
+// interface Props{
+//     platforms:Platform[]
+// }
 
 export interface Platform{
     id:number;

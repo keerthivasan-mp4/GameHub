@@ -3,7 +3,7 @@
 import UseGenre from "../Hooks/UseGenre";
 import type{Genre} from "../Hooks/UseGenre";
 // import CroppedImageUrl from "./services/ImageUrl";  
-import UseData from "../Hooks/useData";
+
 
 
 
