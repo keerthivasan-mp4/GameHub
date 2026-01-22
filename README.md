@@ -1,73 +1,82 @@
-# React + TypeScript + Vite
+## 🎮 Game Hub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern video game discovery platform built with React and TypeScript. Users can search for games, filter by genre, and view ratings.
 
-Currently, two official plugins are available:
+![Project Screenshot](./screenshots/demo.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- **Game Library:** Browse thousands of games using the RAWG API.
+- **Filtering:** Filter by genre, platform (PC, PlayStation, Xbox), and rating.
+- **Dark Mode:** Fully responsive dark-themed UI.
 
-## React Compiler
+## 🛠️ Tech Stack
+- **Frontend:** React, TypeScript, Vite
+- **Styling:** Chakra UI
+- **State Management:** React Hooks
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 💻 Getting Started
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Prerequisites
+- Node.js installed
+- Chakra UI
+```bash
+npm i @chakra-ui/react
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Installation
+ 1.Clone the repository:
+   ```bash
+   git clone [https://github.com/keerthivasan-mp4/Game-Hub.git](https://github.com/keerthivasan-mp4/Game-Hub.git)
+   ```
+2.Navigate to Project Folder
+   ```bash
+   cd Game-Hub
+   ```
+3.Install dependencies:
+   ```bash
+   npm install
+   ```
+4.Start the Server
+   ```bash
+   npm run dev
+   ```
+##Project Structure
+```text
+Game-Hub/
+├── node_modules/
+├── public/
+├── src/
+│   ├── assets/
+│   │   ├── logo.svg              
+│   │   └── No-Image.webp       
+│   ├── component/
+│   │   ├── services/
+│   │   │   ├── api-client.ts
+│   │   │   └── ImageUrl.ts
+│   │   ├── ColorMode.tsx
+│   │   ├── CriticScore.tsx
+│   │   ├── GameCard.tsx
+│   │   ├── GameCardContainer.tsx
+│   │   ├── GameCardSkeleton.tsx
+│   │   ├── GameGrid.tsx
+│   │   ├── GameHeading.tsx
+│   │   ├── Genre.tsx
+│   │   ├── NavBar.tsx
+│   │   ├── PlatformIcon.tsx
+│   │   ├── PlatformSelector.tsx
+│   │   ├── SearchBox.tsx
+│   │   └── SortBy.tsx
+│   ├── Hooks/
+│   │   ├── useData.ts
+│   │   ├── useGame.ts
+│   │   ├── UseGenre.ts
+│   │   └── usePlatforms.ts
+│   ├── App.css
+│   ├── App.tsx
+│   ├── index.css
+│   ├── main.tsx
+│   └── theme.ts
 ```
+
+## API
+The app uses the RAWG API to Games data.
